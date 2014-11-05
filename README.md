@@ -36,6 +36,9 @@ the code:
 - **code**: Generate C code (from a normalized data archive) that can be
   linked against the alternative setuid interface.
 
+- **demo**: Compile a *very* basic demo application that uses the
+  alternative-to-setuid interface (see next section for details).
+
 **Caveat 1**: Some make targets will prompt you for an administrator
 password. That is because data collection must run as root (otherwise, not
 all setuid states could be reached by the data collection program).
