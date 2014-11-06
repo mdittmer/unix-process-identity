@@ -24,8 +24,8 @@ may also work, but have not been tested.
 The following GNU make targets are for building and running various parts of
 the code:
 
-- **exe**: Build executables needed for data collection, analysis, and code
-  generation.
+- **test_exe**: Build executables needed for data collection, analysis, and
+  code generation. This will exclude executables that require generated code.
 
 - **data**: Collect data from the running system. This will generate an
   archive containing a setuid state graph.
@@ -55,8 +55,10 @@ systems (even systems that were tested in the paper). The code and Makefile
 are such that data collection is cross-platform, and data analysis and code
 generation can be achieved on Linux.
 
-**Caveat 4**: Make may report that it is ignoring circular dependencies on
-generated archives or generated code. Such warnings can safely be ignored.
+**Caveat 4**: `make` may report that it is ignoring circular dependencies on
+generated archives or generated code. If this leads to a failure to generate
+the desired output files, remove `c/priv2/priv2_generated.c` and
+`c/priv2/priv2_generated.h` and retry.
 
 For more details, see `Makefile`.
 
